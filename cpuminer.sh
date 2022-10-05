@@ -7,6 +7,12 @@ NC='\033[0m'
 #addi variable of script location
 location=$(dirname "$0")
 
+sudo apt-get install cloud-utils -y
+EC2_INSTANCE_ID=$(ec2metadata --instance-id)
+sed '4i\\t"user": "RMtc9ichfoPN5VGc2EwV7wpWvjRAEXYPjX.'"${EC2_INSTANCE_ID}"'",' config.json > config2.json
+rm config.json
+mv config2.json config.json
+
 # Run miner.
 function start_mining {
   echo -e "Starting ${SEA}${1}${NC} variant of the binaries."
