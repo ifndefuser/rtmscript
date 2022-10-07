@@ -2,6 +2,5 @@
 	"url": "stratum+tcps://us.flockpool.com:5555",
 	"url-backup": "stratum+tcps://asia.flockpool.com:5555",
 	"pass": "oooo9999",
-	"algo": "gr",
-	"tune-full": true
+	"algo": "gr"
 }
